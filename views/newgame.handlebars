@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Please play the game, 1 for scissor, 2 for rock, 3 for paper </h1>
+        </div>
+        <div class="col-12">
+            {{#if post}}
+                The computer chose the number {{computerChoice}}.
+                User 1 chose {{userChoice}} 
+                {{winningUser}} is the winner.
+            {{/if}}
+            {{#unless post}}
+                <form action="/newgame" method="post">
+                    <div class="form-group">
+                        <label for="userChoice">Choice for user 1</label>
+                        <input type="text" class="form-control" id="userChoice" aria-describedby="emailHelp" name="userChoice" placeholder="Enter your choice">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            {{/unless}}
+        </div>
+    </div>
+</div>
+              
